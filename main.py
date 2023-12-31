@@ -54,8 +54,6 @@ def scrape_text(url: str):
         print(e)
         return f"Failed to retrieve the webpage: {e}"
 
-url = "https://blog.langchain.dev/announcing-langsmith/"
-
 scrape_and_summarize_chain = RunnablePassthrough.assign(
     summary = RunnablePassthrough.assign(
     text=lambda x: scrape_text(x["url"])[:10000]
