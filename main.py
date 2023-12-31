@@ -116,7 +116,7 @@ chain = RunnablePassthrough.assign(
     research_summary = full_research_chain | collapse_list_of_lists
 ) | prompt | ChatOpenAI(model="gpt-3.5-turbo-1106") | StrOutputParser()
 
-# Langserve
+# Langserve deployment
 app = FastAPI(
     title="Langchain Server",
     version="1.0",
